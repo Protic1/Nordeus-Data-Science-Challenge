@@ -5,7 +5,6 @@ from sklearn.impute import SimpleImputer
 from sklearn.metrics import mean_absolute_error
 
 # Load the data
-# Replace 'your_data.csv' with the actual path to your dataset
 data = pd.read_csv('jobfair_2023/jobfair_train.csv')
 
 # Features (X) and target variable (y)
@@ -52,7 +51,6 @@ mae = mean_absolute_error(y_test, y_pred)
 print(f'Mean Absolute Error: {mae}')
 
 # Now you can use this model to predict the league rank for new data
-# Replace 'new_data.csv' with the actual path to your new data
 new_data = pd.read_csv('jobfair_2023/jobfair_test.csv')
 new_data_imputed = pd.DataFrame(imputer.transform(new_data[features]), columns=features)
 new_predictions = model.predict(new_data_imputed)
